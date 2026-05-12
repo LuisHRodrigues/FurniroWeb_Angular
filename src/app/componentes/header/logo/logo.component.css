@@ -1,0 +1,11 @@
+.logo_group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  h1 {
+    margin: 0; /* Remove margens padrão que podem desalinhá-lo */
+    font-size: 26pt;
+    color: #333;
+  }
+}
