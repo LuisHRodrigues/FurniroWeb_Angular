@@ -1,36 +1,30 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <header class="global_header">
-    <div class="container_header">
-      <!-- LOGO -->
-      <app-logo class="logo"></app-logo>
+<header class="global_header">
+  <div class="container_header">
+    <!-- LOGO -->
+    <app-logo class="logo"></app-logo>
 
-      <!-- NAVBAR DESKTOP -->
-      <app-navbar class="navBar"></app-navbar>
-
-      <!-- ÁREA DIREITA -->
-      <div class="right_section">
-        <!-- usuário -->
-        <app-options-user class="options_user"></app-options-user>
-
-        <!-- botão hamburguer -->
-        <button class="hamburger" (click)="toggleMenu()">☰</button>
-      </div>
+    <!-- NAV DESKTOP -->
+    <div class="desktop_nav">
+      <app-navbar></app-navbar>
     </div>
 
-    <!-- MENU MOBILE -->
-    <div class="mobile_menu" [class.open]="menuOpen">
-      <a routerLink="/">Home</a>
+    <!-- RIGHT -->
+    <div class="right_section">
+      <app-options-user></app-options-user>
 
-      <a routerLink="/shop"> Shop </a>
-
-      <a routerLink="/about"> About </a>
-
-      <a routerLink="/contact"> Contact </a>
+      <!-- HAMBURGER -->
+      <button class="hamburger" (click)="toggleMenu()" type="button">☰</button>
     </div>
-  </header>
-</html>
+  </div>
+
+  <!-- MENU MOBILE -->
+  <div class="mobile_menu" *ngIf="menuOpen">
+    <a routerLink="/" (click)="menuOpen = false"> Home </a>
+
+    <a routerLink="/shop" (click)="menuOpen = false"> Shop </a>
+
+    <a routerLink="/about" (click)="menuOpen = false"> About </a>
+
+    <a routerLink="/contact" (click)="menuOpen = false"> Contact </a>
+  </div>
+</header>
